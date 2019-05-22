@@ -1,6 +1,6 @@
 {
   "name": "brain-games-dmkvsk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hexlet project: Brain games",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
-    "@babel/preset-env": "^7.4.5"
+    "@babel/preset-env": "^7.4.5",
+    "readline-sync": "^1.4.9"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
