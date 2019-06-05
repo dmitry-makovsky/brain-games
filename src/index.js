@@ -19,7 +19,7 @@ export const makeGame = (gameСondition, gameData) => {
     const { expression, rightAnswer } = gameData();
     const answer = readlineSync.question(`Question: ${expression}\nYour answer: `);
 
-    if (rightAnswer !== answer) {
+    if (rightAnswer.toString() !== answer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'\nLet's try again, ${name}`);
       return false;
     }

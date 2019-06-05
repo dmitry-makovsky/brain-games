@@ -17,7 +17,7 @@ export default () => {
     const { num1, num2 } = { num1: getRandomNum(), num2: getRandomNum() };
     const operation = getRandomProp(mathOperations)(num1, num2);
     const expression = `${num1} ${operation[0]} ${num2}`;
-    const rightAnswer = operation[1].toString();
+    const rightAnswer = operation[1];
     return { expression, rightAnswer };
   };
 

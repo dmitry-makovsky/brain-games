@@ -16,3 +16,11 @@ ___
 **Run:** npx brain-calc
 
 [![asciicast](https://asciinema.org/a/oDcuhmVpyJVJvWyBS9Ry3DIgA.svg)](https://asciinema.org/a/oDcuhmVpyJVJvWyBS9Ry3DIgA)
+
+## brain GCD game
+___
+**Install:** npm install brain-games-dmkvsk
+
+**Run:** npx brain-gcd
+
+[![asciicast](https://asciinema.org/a/tUNHZ3KjADncRe7N4bqsJx87U.svg)](https://asciinema.org/a/tUNHZ3KjADncRe7N4bqsJx87U)
