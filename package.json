@@ -1,6 +1,6 @@
 {
   "name": "brain-games-dmkvsk",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Hexlet project: Brain games",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"

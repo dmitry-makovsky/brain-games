@@ -1,30 +1,26 @@
+/* eslint-disable import/prefer-default-export */
 import readlineSync from 'readline-sync';
 
-export default () => {
-  console.log('Welcome to the Brain Games!\n');
+export const getName = () => {
   const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!\n`);
+  return name;
 };
 
-export const even = () => {
+export const makeGame = (gameСondition, gameData) => {
   const steps = 3;
-  const [min, max] = [1, 100];
 
-  const question = text => readlineSync.question(`${text} `);
-  const getRandomNum = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNum) + minNum);
-  const isEven = num => num % 2 === 0;
-  const rightAnswer = number => (isEven(number) ? 'yes' : 'no');
+  console.log('Welcome to the Brain Games!');
+  console.log(`${gameСondition}\n`);
 
-  console.log('Welcome to the Brain Games!\nAnswer "yes" if number even otherwise answer "no".\n');
-  const name = question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+  const name = getName();
 
-  const gameIter = (step) => {
-    const number = getRandomNum(min, max);
-    const answer = question(`Question: ${number}\nYour answer: `);
+  const iter = (step) => {
+    const { expression, rightAnswer } = gameData();
+    const answer = readlineSync.question(`Question: ${expression}\nYour answer: `);
 
-    if (rightAnswer(number) !== answer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer(number)}'\nLet's try again, ${name}`);
+    if (rightAnswer !== answer) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'\nLet's try again, ${name}`);
       return false;
     }
 
@@ -33,8 +29,8 @@ export const even = () => {
       return true;
     }
     console.log('Correct!');
-    gameIter(step - 1);
+    iter(step - 1);
     return true;
   };
-  gameIter(steps);
+  iter(steps);
 };
