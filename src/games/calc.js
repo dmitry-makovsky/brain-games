@@ -1,7 +1,7 @@
 import { makeGame } from '..';
+import getRandomNum from '../helpers';
 
 export default () => {
-  const getRandomNum = (min = 1, max = 100) => Math.floor(Math.random() * (max - min) + min);
   const getRandomProp = (object) => {
     const keys = Object.keys(object);
     return object[keys[getRandomNum(1, keys.length)]];

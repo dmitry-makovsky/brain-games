@@ -24,3 +24,11 @@ ___
 **Run:** npx brain-gcd
 
 [![asciicast](https://asciinema.org/a/tUNHZ3KjADncRe7N4bqsJx87U.svg)](https://asciinema.org/a/tUNHZ3KjADncRe7N4bqsJx87U)
+
+## brain progression game
+___
+**Install:** npm install brain-games-dmkvsk
+
+**Run:** npx brain-progression
+
+[![asciicast](https://asciinema.org/a/SNDKAjXaegTj9yTpThK7QZskw.svg)](https://asciinema.org/a/SNDKAjXaegTj9yTpThK7QZskw)

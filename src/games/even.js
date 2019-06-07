@@ -1,7 +1,7 @@
 import { makeGame } from '..';
+import getRandomNum from '../helpers';
 
 export default () => {
-  const getRandomNum = (min = 1, max = 100) => Math.floor(Math.random() * (max - min) + min);
   const isEven = num => num % 2 === 0;
 
   const gameData = () => {
