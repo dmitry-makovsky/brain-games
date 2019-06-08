@@ -32,3 +32,11 @@ ___
 **Run:** npx brain-progression
 
 [![asciicast](https://asciinema.org/a/SNDKAjXaegTj9yTpThK7QZskw.svg)](https://asciinema.org/a/SNDKAjXaegTj9yTpThK7QZskw)
+
+## brain "is prime?" game
+___
+**Install:** npm install brain-games-dmkvsk
+
+**Run:** npx brain-prime
+
+[![asciicast](https://asciinema.org/a/Y6uzRDU9g0UFSVqtzMZjpIStH.svg)](https://asciinema.org/a/Y6uzRDU9g0UFSVqtzMZjpIStH)
