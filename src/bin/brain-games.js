@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import index from '..';
+import readlineSync from 'readline-sync';
 
-index();
+const name = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${name}`);
