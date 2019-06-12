@@ -1,6 +1,7 @@
-import { makeGame } from '..';
+import makeGame from '..';
 import getRandomNum from '../helpers';
 
+const gameMission = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (num) => {
   if (num < 2) {
     return false;
@@ -14,11 +15,10 @@ const isPrime = (num) => {
 };
 
 export default () => {
-  const gameData = () => {
-    const expression = getRandomNum();
-    const rightAnswer = isPrime(expression) ? 'yes' : 'no';
-    return { expression, rightAnswer };
+  const getGameData = () => {
+    const question = getRandomNum();
+    const rightAnswer = isPrime(question) ? 'yes' : 'no';
+    return { question, rightAnswer };
   };
-
-  makeGame('Answer "yes" if given number is prime. Otherwise answer "no".', gameData);
+  makeGame(gameMission, getGameData);
 };

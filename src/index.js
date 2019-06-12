@@ -1,25 +1,22 @@
 import readlineSync from 'readline-sync';
 
-export const getName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\n`);
-  return name;
-};
-
-export const makeGame = (gameСondition, gameData) => {
-  const steps = 3;
+export default (gameСondition, getGameData) => {
+  const stepsCount = 3;
 
   console.log('Welcome to the Brain Games!');
   console.log(`${gameСondition}\n`);
 
-  const name = getName();
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!\n`);
 
   const iter = (step) => {
-    const { expression, rightAnswer } = gameData();
-    const answer = readlineSync.question(`Question: ${expression}\nYour answer: `);
+    const { question, rightAnswer } = getGameData();
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
 
     if (rightAnswer.toString() !== answer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'\nLet's try again, ${name}`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+      console.log(`Let's try again, ${name}`);
       return false;
     }
 
@@ -31,5 +28,5 @@ export const makeGame = (gameСondition, gameData) => {
     iter(step - 1);
     return true;
   };
-  iter(steps);
+  iter(stepsCount);
 };

@@ -1,30 +1,30 @@
-import { makeGame } from '..';
+import makeGame from '..';
 import getRandomNum from '../helpers';
 
+const gameMission = 'What number is missing in the progression?';
+const lengthOfProgression = 10;
+
+const makeProgression = (start, step) => {
+  const iter = (num, acc) => {
+    if (acc.length === lengthOfProgression) {
+      return acc;
+    }
+    const newAcc = acc.concat([num + step]);
+    return iter(newAcc[newAcc.length - 1], newAcc);
+  };
+  return iter(start + step, [start]);
+};
+
 export default () => {
-  const makeProgression = (start, diff) => {
-    const iter = (num, acc) => {
-      if (acc.length === 10) {
-        return acc;
-      }
-      const newAcc = acc.concat([num + diff]);
-      return iter(newAcc[newAcc.length - 1], newAcc);
-    };
-    return iter(start + diff, [start]);
+  const getGameData = () => {
+    const startProgression = getRandomNum();
+    const stepProgression = getRandomNum();
+    const randomIndex = getRandomNum(0, lengthOfProgression - 1);
+
+    const progression = makeProgression(startProgression, stepProgression);
+    const rightAnswer = progression[randomIndex];
+    const question = progression.map(el => (el === progression[randomIndex] ? '..' : el)).join(' ');
+    return { question, rightAnswer };
   };
-
-  const gameData = () => {
-    const { num1, num2, index } = {
-      num1: getRandomNum(),
-      num2: getRandomNum(),
-      index: getRandomNum(0, 9),
-    };
-
-    const progression = makeProgression(num1, num2);
-    const rightAnswer = progression[index];
-    const expression = progression.map(el => (el === progression[index] ? '..' : el)).join(' ');
-    return { expression, rightAnswer };
-  };
-
-  makeGame('What number is missing in the progression?', gameData);
+  makeGame(gameMission, getGameData);
 };
