@@ -1,8 +1,9 @@
 import makeGame from '..';
-import getRandomNum from '../helpers';
+import getRandomNum from '../random';
 
-const gameMission = 'Find the greatest common divisor of given numbers.';
-const gcd = (num1, num2) => {
+const gameСondition = 'Find the greatest common divisor of given numbers.';
+
+const getGcd = (num1, num2) => {
   if (num1 === 0) {
     return num2;
   }
@@ -10,18 +11,20 @@ const gcd = (num1, num2) => {
     return num1;
   }
   if (num1 > num2) {
-    return gcd(num1 % num2, num2);
+    return getGcd(num1 % num2, num2);
   }
-  return gcd(num1, num2 % num1);
+  return getGcd(num1, num2 % num1);
+};
+
+const getGameData = () => {
+  const num1 = getRandomNum();
+  const num2 = getRandomNum();
+
+  const question = `${num1} ${num2}`;
+  const rightAnswer = getGcd(num1, num2).toString();
+  return { question, rightAnswer };
 };
 
 export default () => {
-  const getGameData = () => {
-    const { num1, num2 } = { num1: getRandomNum(), num2: getRandomNum() };
-
-    const question = `${num1} ${num2}`;
-    const rightAnswer = gcd(num1, num2);
-    return { question, rightAnswer };
-  };
-  makeGame(gameMission, getGameData);
+  makeGame(gameСondition, getGameData);
 };

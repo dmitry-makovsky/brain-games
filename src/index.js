@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-export default (gameСondition, getGameData) => {
-  const stepsCount = 3;
+const stepsCount = 3;
 
+export default (gameСondition, getGameData) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${gameСondition}\n`);
 
@@ -14,19 +14,18 @@ export default (gameСondition, getGameData) => {
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (rightAnswer.toString() !== answer) {
+    if (rightAnswer !== answer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
       console.log(`Let's try again, ${name}`);
-      return false;
+      return;
     }
 
     if (step === 1) {
       console.log(`Congratulations, ${name}`);
-      return true;
+      return;
     }
     console.log('Correct!');
     iter(step - 1);
-    return true;
   };
   iter(stepsCount);
 };
