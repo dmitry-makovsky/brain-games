@@ -22,7 +22,7 @@ const getGameData = () => {
 
   const progression = makeProgression(progressionStart, progressionStep, lengthProgression);
   const rightAnswer = progression[randomIndex].toString();
-  const question = progression.map(el => (el === progression[randomIndex] ? '..' : el)).join(' ');
+  const question = progression.map((el) => (el === progression[randomIndex] ? '..' : el)).join(' ');
   return { question, rightAnswer };
 };
 
