@@ -14,16 +14,17 @@ export default (gameСondition, getGameData) => {
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
+    if (step === 1) {
+      console.log(`Congratulations, ${name}`);
+      return;
+    }
+
     if (rightAnswer !== answer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
       console.log(`Let's try again, ${name}`);
       return;
     }
 
-    if (step === 1) {
-      console.log(`Congratulations, ${name}`);
-      return;
-    }
     console.log('Correct!');
     iter(step - 1);
   };
