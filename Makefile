@@ -2,6 +2,8 @@
 
 install:
 	npm install
+build:
+	npm run build
 start:
 	npx babel-node src/bin/brain-games.js
 publish:
@@ -10,12 +12,12 @@ lint:
 	npx eslint .
 
 brain-even:
-	npx babel-node src/bin/brain-even.js
+	npx node dist/bin/brain-even.js
 brain-calc:
-	npx babel-node src/bin/brain-calc.js
+	npx node dist/bin/brain-calc.js
 brain-gcd:
-	npx babel-node src/bin/brain-gcd.js
+	npx node dist/bin/brain-gcd.js
 brain-progression:
-	npx babel-node src/bin/brain-progression.js
+	npx node dist/bin/brain-progression.js
 brain-prime:
-	npx babel-node src/bin/brain-prime.js
+	npx node dist/bin/brain-prime.js
