@@ -1,39 +1,92 @@
 # Brain Games
+
+This is a package with five games that you can run and play in the console.
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/3eac9d479da9284e7120/maintainability)](https://codeclimate.com/github/dmitry-makovsky/project-lvl1-s504/maintainability) [![Build Status](https://travis-ci.org/dmitry-makovsky/project-lvl1-s504.svg?branch=master)](https://travis-ci.org/dmitry-makovsky/project-lvl1-s504)
 
 # Install
 
-**Run:** npm install && npm link
-___
-[![asciicast](https://asciinema.org/a/gwZoBMGh3QU73a6wP1wqkbF4V.svg)](https://asciinema.org/a/gwZoBMGh3QU73a6wP1wqkbF4V)
+![Install brain-games](https://raw.githubusercontent.com/dmitry-makovsky/brain-games/master/img/install.gif)
 
+Before gaming you need:
 
-## brain even game
+```
+# Clone this repository.
+$ git clone https://github.com/dmitry-makovsky/brain-games.git
 
-**Run:** brain-even
-___
-[![asciicast](https://asciinema.org/a/aqm1Thg2rODcHRYYVkV3PJRCq.svg)](https://asciinema.org/a/aqm1Thg2rODcHRYYVkV3PJRCq)
+# Go to the repository.
+$ cd brain-games
 
-## brain calc game
+# Install dependencies.
+$ make install
 
-**Run:** brain-calc
-___
-[![asciicast](https://asciinema.org/a/wlTNPxFrQ5rTK4nmdUb9ibsoo.svg)](https://asciinema.org/a/wlTNPxFrQ5rTK4nmdUb9ibsoo)
+# Build package
+$ make build
 
-## brain GCD game
+# If you want install games globaly - link this package.
+$ npm link
 
-**Run:** brain-gcd
-___
-[![asciicast](https://asciinema.org/a/2qk3sSY4yjWkMn97ggqFHNP4h.svg)](https://asciinema.org/a/2qk3sSY4yjWkMn97ggqFHNP4h)
+# Then run the chosen game
+```
 
-## brain progression game
+# Usage
 
-**Run:** brain-progression
-___
-[![asciicast](https://asciinema.org/a/naNM6yizXbmMISWtISJOxYEie.svg)](https://asciinema.org/a/naNM6yizXbmMISWtISJOxYEie)
+## Is even game
+
+The player must answer if this number is even or not
+
+**Run:**
+
+```
+make brain-even
+```
+
+![Run brain-even](https://raw.githubusercontent.com/dmitry-makovsky/brain-games/master/img/even.gif)
+
+## Calc game
+
+The player must solve arithmetic expression
+
+**Run:**
+
+```
+make brain-calc
+```
+
+![Run brain-calc](https://raw.githubusercontent.com/dmitry-makovsky/brain-games/master/img/calc.gif)
+
+## Find GCD game
+
+The player must find the largest common divisor of two numbers
+
+**Run:**
+
+```
+make brain-gcd
+```
+
+![Run brain-gcd](https://raw.githubusercontent.com/dmitry-makovsky/brain-games/master/img/gcd.gif)
+
+## Progression game
+
+The player must find the missing number in the progression.
+
+**Run:**
+
+```
+make brain-progression
+```
+
+![Run brain-progression](https://raw.githubusercontent.com/dmitry-makovsky/brain-games/master/img/progression.gif)
 
 ## brain "is prime?" game
 
-**Run:** brain-prime
-___
-[![asciicast](https://asciinema.org/a/xg0fqtqAufRlizvwIZUxsaFN9.svg)](https://asciinema.org/a/xg0fqtqAufRlizvwIZUxsaFN9)
+The player must answer if this number is prime or not
+
+**Run:**
+
+```
+make brain-prime
+```
+
+![Run brain-progression](https://raw.githubusercontent.com/dmitry-makovsky/brain-games/master/img/prime.gif)
